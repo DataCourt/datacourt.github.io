@@ -1,0 +1,10 @@
+base
+dplyr
+ggplot2
+knitr
+lattice
+lubridate
+rCharts
+slidify
+XLConnect
+XLConnectJars

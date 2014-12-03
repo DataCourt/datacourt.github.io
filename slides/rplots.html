@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction To Plotting And Visualization</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction To Plotting And Visualization">
+  <meta name="author" content="2014">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Introduction To Plotting And Visualization</h1>
+    <h2>DataCourt</h2>
+    <p>2014<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <p><br /><br /><br /></p>
+
+<p>The R language is one of the easiest, and most simple environments to easily commmunicate your views, research and findings, all with very few or minimal lines of code!</p>
+
+<p>We will show you how...</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <article data-timings="">
+    <p>With our training, you will learn how to generate simple graphical plots such as this:</p>
+
+<pre><code class="r">with(cars, hist(dist, xlab=&quot;Distance&quot;,
+                main=&quot;&#39;Cars&#39; Dataset\nFrequency of Distance Covered&quot;, col=&quot;red&quot;))
+</code></pre>
+
+<p><img src="img/unnamed-chunk-2-1.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"></img></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p>Or more informative or multiple plots such as this:</p>
+
+<pre><code class="r">qplot(displ, data=mpg, fill=manufacturer, facets=drv~class,
+      xlab=&quot;Displacement&quot;, ylab=&quot;Count&quot;, main=&quot;&#39;MPG&#39; Dataset&quot;)
+</code></pre>
+
+<p><img src="img/unnamed-chunk-4-1.png" style="display: block; margin-left: auto; margin-right: auto; width: 85%;"></img></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Interactive Plots!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We&#39;ll also be teaching you how to make interactive plots such as this...</p>
+
+<p>For example, here is a barplot of the &#39;HairEyeColor&#39; dataset.</p>
+
+<div style="font-size: 0.8em; text-align: center; margin-bottom: 1em;">Click any of the buttons at the top<br/>Hover your mouse over any of the bars on the graph</div>
+
+<div id = 'chartad831a721ed' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchartad831a721ed()
+    });
+    function drawchartad831a721ed(){  
+      var opts = {
+ "dom": "chartad831a721ed",
+"width":    800,
+"height":    400,
+"x": "Hair",
+"y": "Freq",
+"group": "Eye",
+"type": "multiBarChart",
+"id": "chartad831a721ed" 
+},
+        data = [
+ {
+ "Hair": "Black",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":             36 
+},
+{
+ "Hair": "Brown",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":             66 
+},
+{
+ "Hair": "Red",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":             16 
+},
+{
+ "Hair": "Blond",
+"Eye": "Brown",
+"Sex": "Female",
+"Freq":              4 
+},
+{
+ "Hair": "Black",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":              9 
+},
+{
+ "Hair": "Brown",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":             34 
+},
+{
+ "Hair": "Red",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Blue",
+"Sex": "Female",
+"Freq":             64 
+},
+{
+ "Hair": "Black",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":              5 
+},
+{
+ "Hair": "Brown",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":             29 
+},
+{
+ "Hair": "Red",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Hazel",
+"Sex": "Female",
+"Freq":              5 
+},
+{
+ "Hair": "Black",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":              2 
+},
+{
+ "Hair": "Brown",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":             14 
+},
+{
+ "Hair": "Red",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":              7 
+},
+{
+ "Hair": "Blond",
+"Eye": "Green",
+"Sex": "Female",
+"Freq":              8 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .color([ "brown", "blue", "#594c26", "green" ])
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Another Interactive Plot</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style="font-size: 0.8em; text-align: center; margin-bottom: 1em;">Click any of the buttons at the top<br/>Hover your mouse over any of the bars on the graph</div>
+
+<div id = 'chartad8568f2308' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchartad8568f2308()
+    });
+    function drawchartad8568f2308(){  
+      var opts = {
+ "dom": "chartad8568f2308",
+"width":    800,
+"height":    400,
+"x": "t",
+"y": "val",
+"group": "var",
+"type": "stackedAreaChart",
+"id": "chartad8568f2308",
+"title": "rCharts + nvd3 Power" 
+},
+        data = [
+ {
+ "t": 0,
+"var": "A",
+"val":             14 
+},
+{
+ "t": 0,
+"var": "B",
+"val":             28 
+},
+{
+ "t": 0,
+"var": "C",
+"val":             25 
+},
+{
+ "t": 0,
+"var": "D",
+"val":             34 
+},
+{
+ "t": 1,
+"var": "A",
+"val":             23 
+},
+{
+ "t": 1,
+"var": "B",
+"val":             39 
+},
+{
+ "t": 1,
+"var": "C",
+"val":             22 
+},
+{
+ "t": 1,
+"var": "D",
+"val":             16 
+},
+{
+ "t": 2,
+"var": "A",
+"val":             49 
+},
+{
+ "t": 2,
+"var": "B",
+"val":             26 
+},
+{
+ "t": 2,
+"var": "C",
+"val":             24 
+},
+{
+ "t": 2,
+"var": "D",
+"val":             31 
+},
+{
+ "t": 3,
+"var": "A",
+"val":             40 
+},
+{
+ "t": 3,
+"var": "B",
+"val":             44 
+},
+{
+ "t": 3,
+"var": "C",
+"val":             10 
+},
+{
+ "t": 3,
+"var": "D",
+"val":             41 
+},
+{
+ "t": 4,
+"var": "A",
+"val":             50 
+},
+{
+ "t": 4,
+"var": "B",
+"val":              2 
+},
+{
+ "t": 4,
+"var": "C",
+"val":             13 
+},
+{
+ "t": 4,
+"var": "D",
+"val":             24 
+},
+{
+ "t": 5,
+"var": "A",
+"val":             40 
+},
+{
+ "t": 5,
+"var": "B",
+"val":             33 
+},
+{
+ "t": 5,
+"var": "C",
+"val":              5 
+},
+{
+ "t": 5,
+"var": "D",
+"val":             10 
+},
+{
+ "t": 6,
+"var": "A",
+"val":             50 
+},
+{
+ "t": 6,
+"var": "B",
+"val":             42 
+},
+{
+ "t": 6,
+"var": "C",
+"val":              9 
+},
+{
+ "t": 6,
+"var": "D",
+"val":             48 
+},
+{
+ "t": 7,
+"var": "A",
+"val":              9 
+},
+{
+ "t": 7,
+"var": "B",
+"val":             22 
+},
+{
+ "t": 7,
+"var": "C",
+"val":             30 
+},
+{
+ "t": 7,
+"var": "D",
+"val":              1 
+},
+{
+ "t": 8,
+"var": "A",
+"val":             28 
+},
+{
+ "t": 8,
+"var": "B",
+"val":             36 
+},
+{
+ "t": 8,
+"var": "C",
+"val":             10 
+},
+{
+ "t": 8,
+"var": "D",
+"val":             36 
+},
+{
+ "t": 9,
+"var": "A",
+"val":             48 
+},
+{
+ "t": 9,
+"var": "B",
+"val":              7 
+},
+{
+ "t": 9,
+"var": "C",
+"val":             31 
+},
+{
+ "t": 9,
+"var": "D",
+"val":             16 
+},
+{
+ "t": 10,
+"var": "A",
+"val":             19 
+},
+{
+ "t": 10,
+"var": "B",
+"val":             23 
+},
+{
+ "t": 10,
+"var": "C",
+"val":             29 
+},
+{
+ "t": 10,
+"var": "D",
+"val":             10 
+},
+{
+ "t": 11,
+"var": "A",
+"val":              9 
+},
+{
+ "t": 11,
+"var": "B",
+"val":             50 
+},
+{
+ "t": 11,
+"var": "C",
+"val":             39 
+},
+{
+ "t": 11,
+"var": "D",
+"val":             46 
+},
+{
+ "t": 12,
+"var": "A",
+"val":             30 
+},
+{
+ "t": 12,
+"var": "B",
+"val":             46 
+},
+{
+ "t": 12,
+"var": "C",
+"val":             48 
+},
+{
+ "t": 12,
+"var": "D",
+"val":             50 
+},
+{
+ "t": 13,
+"var": "A",
+"val":             21 
+},
+{
+ "t": 13,
+"var": "B",
+"val":              1 
+},
+{
+ "t": 13,
+"var": "C",
+"val":             45 
+},
+{
+ "t": 13,
+"var": "D",
+"val":             37 
+},
+{
+ "t": 14,
+"var": "A",
+"val":             40 
+},
+{
+ "t": 14,
+"var": "B",
+"val":             11 
+},
+{
+ "t": 14,
+"var": "C",
+"val":             25 
+},
+{
+ "t": 14,
+"var": "D",
+"val":              8 
+},
+{
+ "t": 15,
+"var": "A",
+"val":             18 
+},
+{
+ "t": 15,
+"var": "B",
+"val":             19 
+},
+{
+ "t": 15,
+"var": "C",
+"val":             23 
+},
+{
+ "t": 15,
+"var": "D",
+"val":             25 
+},
+{
+ "t": 16,
+"var": "A",
+"val":             19 
+},
+{
+ "t": 16,
+"var": "B",
+"val":              8 
+},
+{
+ "t": 16,
+"var": "C",
+"val":             28 
+},
+{
+ "t": 16,
+"var": "D",
+"val":             24 
+},
+{
+ "t": 17,
+"var": "A",
+"val":             47 
+},
+{
+ "t": 17,
+"var": "B",
+"val":             35 
+},
+{
+ "t": 17,
+"var": "C",
+"val":             39 
+},
+{
+ "t": 17,
+"var": "D",
+"val":             49 
+},
+{
+ "t": 18,
+"var": "A",
+"val":             46 
+},
+{
+ "t": 18,
+"var": "B",
+"val":             39 
+},
+{
+ "t": 18,
+"var": "C",
+"val":              2 
+},
+{
+ "t": 18,
+"var": "D",
+"val":             49 
+},
+{
+ "t": 19,
+"var": "A",
+"val":             33 
+},
+{
+ "t": 19,
+"var": "B",
+"val":             24 
+},
+{
+ "t": 19,
+"var": "C",
+"val":             48 
+},
+{
+ "t": 19,
+"var": "D",
+"val":             18 
+},
+{
+ "t": 20,
+"var": "A",
+"val":             32 
+},
+{
+ "t": 20,
+"var": "B",
+"val":             17 
+},
+{
+ "t": 20,
+"var": "C",
+"val":             20 
+},
+{
+ "t": 20,
+"var": "D",
+"val":             42 
+},
+{
+ "t": 21,
+"var": "A",
+"val":             48 
+},
+{
+ "t": 21,
+"var": "B",
+"val":              5 
+},
+{
+ "t": 21,
+"var": "C",
+"val":             27 
+},
+{
+ "t": 21,
+"var": "D",
+"val":             40 
+},
+{
+ "t": 22,
+"var": "A",
+"val":             39 
+},
+{
+ "t": 22,
+"var": "B",
+"val":              8 
+},
+{
+ "t": 22,
+"var": "C",
+"val":             44 
+},
+{
+ "t": 22,
+"var": "D",
+"val":             21 
+},
+{
+ "t": 23,
+"var": "A",
+"val":              2 
+},
+{
+ "t": 23,
+"var": "B",
+"val":              4 
+},
+{
+ "t": 23,
+"var": "C",
+"val":             13 
+},
+{
+ "t": 23,
+"var": "D",
+"val":              2 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .useInteractiveGuideline(true)
+          
+        
+
+        
+        
+        chart.yAxis
+  .axisLabel("Value")
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>You can even employ such interactivity for educational purposes!</p>
+
+<h2>Answer this question!</h2>
+
+<p>How many colours are in the spectrum of a rainbow?</p>
+
+<ol>
+<li><em>7 colours</em> </li>
+<li>8 colours</li>
+<li>9 colours</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Remember the acronym <em>&#39;ROYGBIV&#39;</em>?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>There are <strong>7</strong> colours in the spectrum of a rainbow:</p>
+
+<ul>
+<li><strong>R</strong>ed</li>
+<li><strong>O</strong>range</li>
+<li><strong>Y</strong>ellow</li>
+<li><strong>G</strong>reen</li>
+<li><strong>B</strong>lue</li>
+<li><strong>I</strong>ndigo</li>
+<li><strong>V</strong>iolet</li>
+</ul>
+
+<p>the first letter of each make up the acronym <strong><em>ROYGBIV</em></strong></p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <article data-timings="">
+    <p><br /><br /><br />
+<em>This entire presentation (writing, effects, graphics, publishing) was done</em> <strong><em>solely</em></strong> <em>with R (in RStudio) using R&#39;s</em> <strong>slidify</strong> and <strong>Rpres</strong> <em>packages.</em></p>
+
+<p>Click any of the following:</p>
+
+<ul>
+<li><a href="../index.html">Return to front page</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Interactive Plots!'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Another Interactive Plot'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
